@@ -1,13 +1,8 @@
-import { FC } from "react"
+import { createBrowserRouter } from "react-router-dom"
+import { Home } from "./pages/home"
+import { Cart } from "./pages/cart"
 
-interface AppProps {}
 
-const App: FC<AppProps> = ({}) => {
-  return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  )
-}
-
-export default App
+const router = createBrowserRouter([
+  {element: }
+])
