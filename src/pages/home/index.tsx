@@ -1,6 +1,19 @@
+import { useEffect, useState } from "react"
 import { BsCartPlus } from "react-icons/bs"
+import { api } from "../../services/api"
 
 export function Home() {
+  const [products, setProducts] = useState<[]>([])
+
+  useEffect(() => {
+    async function getProducts() {
+      const response = await api.get("/products")
+      console.log(response.data)
+    }
+
+    getProducts()
+  }, [])
+
   return (
     <div>
       <main className="w-full max-w-7xl px-4 mx-auto">
