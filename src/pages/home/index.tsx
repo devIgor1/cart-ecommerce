@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { BsCartPlus } from "react-icons/bs"
 import { api } from "../../services/api"
 
-interface ProductProps {
+export interface ProductProps {
   id: number
   title: string
   description: string
@@ -22,6 +22,10 @@ export function Home() {
 
     getProducts()
   }, [])
+
+  function handleAddToCart(product: ProductProps) {
+    console.log(product)
+  }
 
   return (
     <div>
@@ -45,7 +49,10 @@ export function Home() {
                     currency: "USD",
                   })}
                 </strong>
-                <button className="bg-zinc-900 p-1 rounded">
+                <button
+                  className="bg-zinc-900 p-1 rounded"
+                  onClick={() => handleAddToCart(product)}
+                >
                   <BsCartPlus size={20} color="#fff" />
                 </button>
               </div>
