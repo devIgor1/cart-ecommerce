@@ -54,7 +54,14 @@ export function Cart() {
         </section>
       ))}
 
-      {cart.length !== 0 && <p className="font-bold mt-4">Total: {total}</p>}
+      <div className="flex items-center justify-between mt-4">
+        {cart.length !== 0 && <p className="font-bold mt-4">Total: {total}</p>}
+        <Link to="/thanks">
+          <button className="bg-zinc-900 text-white p-3 rounded-md font-medium">
+            Finish order
+          </button>
+        </Link>
+      </div>
     </div>
   )
 }
