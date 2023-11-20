@@ -25,3 +25,8 @@ Para fazer o uso desse projeto corretamente rode:
  - [TailwindCSS](https://tailwindcss.com/)
 
 
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=https://prnt.sc/j8MLJTA18L8D)
+
