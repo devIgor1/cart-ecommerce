@@ -1,9 +1,14 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { CartContext } from "../../contexts/CartContext"
 import { Link } from "react-router-dom"
 
 export function Cart() {
-  const { cart, total, addItemCart, removeItemCart } = useContext(CartContext)
+  const { cart, total, addItemCart, removeItemCart, resetCart } =
+    useContext(CartContext)
+
+  useEffect(() => {
+    cart
+  }, [cart])
 
   return (
     <div className="w-full max-w-7xl mx-auto">
@@ -54,14 +59,21 @@ export function Cart() {
         </section>
       ))}
 
-      <div className="flex items-center justify-between mt-4">
-        {cart.length !== 0 && <p className="font-bold mt-4">Total: {total}</p>}
-        <Link to="/thanks">
-          <button className="bg-zinc-900 text-white p-3 rounded-md font-medium">
-            Finish order
-          </button>
-        </Link>
-      </div>
+      {cart.length !== 0 && (
+        <div className="flex items-center justify-between mt-4">
+          {cart.length !== 0 && (
+            <p className="font-bold mt-4">Total: {total}</p>
+          )}
+          <Link to="/thanks">
+            <button
+              onClick={resetCart}
+              className="bg-zinc-900 text-white p-3 rounded-md font-medium"
+            >
+              Finish order
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   )
 }
