@@ -14,6 +14,12 @@ Para fazer o uso desse projeto corretamente rode:
 ```bash
   npm install 
 ```
+```bash
+  json-server --watch db.json 
+```
+```bash
+  npm run dev
+```
 
 
 
